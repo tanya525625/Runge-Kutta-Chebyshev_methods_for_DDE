@@ -1,5 +1,5 @@
 span_start = 0;
-span_end = 3;
+span_end = 10;
 count = 500;
 approx_init_1 = 1;
 approx_init_2 = 0;
