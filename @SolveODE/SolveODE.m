@@ -24,12 +24,13 @@ classdef SolveODE
             obj.h = (span_end - span_start) / count;
             obj.func = func;
             obj.timespan = span_start:obj.h:span_end;
-            obj.timespan_length = length(obj.timespan)
+            obj.timespan_length = length(obj.timespan);
             obj.y = zeros(2, obj.timespan_length);
             obj.y(1, 1) = approx_init_1;
             obj.y(2, 1) = approx_init_2;
        end
        y = first_order_RKC_method_for_ODEs(obj, s);
+       y = SROCK_for_ODE(obj, s, n);
    end
 end
 
