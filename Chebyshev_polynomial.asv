@@ -1,10 +1,16 @@
 function T = Chebyshev_polynomial(x, degree)
     % T = cos(degree * acos(x));
+    T = zeros(degree);
     if degree == 0 || (degree == 1)
         T = 1;
     elseif degree == 1
         T = x;
     else
-        T = 2 * x * Chebyshev_polynomial(x, degree-1) - Chebyshev_polynomial(x, degree-2);
+    
+    end
+    T(1) = 1;
+    T(2) = x;
+    for i = 3:degree
+        T(i) = 2 * x * T(i - 1)
     end
 end

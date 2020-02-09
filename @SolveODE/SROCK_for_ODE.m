@@ -10,8 +10,7 @@ end
 function K = find_K(y_n, s, obj, n)
     K = zeros(2, s);
     K(:, 1) = y_n;
-    n
-    w_0 = 1 + n / (s * s)
+    w_0 = 1 + n / (s * s);
     
     w_1 = Chebyshev_polynomial(w_0, s);
     K(:, 2) = y_n + obj.h * w_1 / w_0 * obj.func(K(:, 1));
