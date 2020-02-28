@@ -1,6 +1,5 @@
 function T = Chebyshev_polynomial(x, degree)
 
-    % T = cos(degree * acos(x));
     if degree == 0
         T = 1;
     elseif degree == 1
