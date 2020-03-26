@@ -1,9 +1,9 @@
 function [u_new, v_new] = diffusion_equations(t, u, v, x)
     x_count = length(x);
-    delta = 1 / (x_count + 1);
+    delta = 1 / (x_count);
     u_new = zeros(1, x_count);
     v_new = zeros(1, x_count);
-    alpha = 1 / 50; 
+    alpha = 1 / 50;
     
     for i=1:x_count
         if i == 1 || i == x_count
