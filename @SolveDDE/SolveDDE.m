@@ -38,6 +38,6 @@ classdef SolveDDE
             obj.delay = const;
             obj.args_count = args_count;
        end
-       y = ROCK_for_scalar_DDE(obj, s, koef);
+       y = ROCK_for_scalar_DDE(obj, s, koef, is_inter);
    end
 end

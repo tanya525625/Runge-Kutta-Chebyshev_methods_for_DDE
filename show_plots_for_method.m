@@ -19,8 +19,12 @@ end
 
 function make_plot(timespan, y, plot_title)
     figure('Name', plot_title);
+    set(0,'DefaultAxesFontSize',18,'DefaultAxesFontName','Arial Cyr');
     hold on;
     grid on;
-    title(plot_title)
+    xlabel('time')
+    ylabel('solution')
+    % title(plot_title)
+    % plot(timespan, y, 'LineWidth', 1.5) 
     plot(timespan, y)   
 end
