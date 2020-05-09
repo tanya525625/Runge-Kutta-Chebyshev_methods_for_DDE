@@ -1,5 +1,4 @@
 function dy = scalar_DDE(y, z)
-    lambda = -100;
-    mu = 75;
+global lambda mu;
     dy = lambda*y + mu*z;
 end

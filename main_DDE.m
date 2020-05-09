@@ -1,23 +1,25 @@
-span_start = 0;
-span_end = 20;
-count = 1000;
-approx_init = 1;
-history_func = @history_func;
-delayed_func = @scalar_DDE;
-t_retarded = 1;
-args_count = 1;
+global lambda mu
 
+span_start = 0;
+approx_init = 1;
+history_func_ = @history_func;
+delayed_func_ = @scalar_DDE;
+t_retarded = 1; 
+args_count = 1;
+h = 1;
+count = 100;
+span_end = h * count;
 
 diffEq1 = SolveDDE(span_start, span_end, count, t_retarded,...
                    approx_init, args_count,...
-                   delayed_func, history_func);
+                   delayed_func_, history_func_);
                     
 s = 2;
-koef = 0;
-lambda = -100;
-is_inter = 0;
-mu = 2;
-h = (span_end - span_start) / count
+koef = 0.1;
+lambda = -5;
+is_inter = 1;
+mu = 3;
+%h = (span_end - span_start) / count
 
 method = 'Rock for scalar equation: ';
 title = strcat(method, 32, 'N =', 32, num2str(count), ', s =', 32, num2str(s),... 
