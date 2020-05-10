@@ -24,10 +24,10 @@ classdef SolveDDE
       history_func 
    end
    methods   
-       function obj = SolveDDE(span_start, span_end, count, const,...
+       function obj = SolveDDE(span_start, span_end, points_count, delay,...
                                     approx_init, args_count,...
                                     retarded_func, history_func)
-            obj.h = (span_end - span_start) / count;
+            obj.h = (span_end - span_start) / points_count;
             obj.approx_init = approx_init;
             obj.history_func = history_func;
             obj.func = retarded_func;
@@ -35,9 +35,9 @@ classdef SolveDDE
             obj.timespan_length = length(obj.timespan);
             obj.y = zeros(args_count, obj.timespan_length);
             obj.y(:, 1) = obj.approx_init;
-            obj.delay = const;
+            obj.delay = delay;
             obj.args_count = args_count;
        end
-       y = ROCK_for_scalar_DDE(obj, s, koef, is_inter);
+       y = RKC_for_scalar_DDE(obj, s, koef, is_inter);
    end
 end

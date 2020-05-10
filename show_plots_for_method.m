@@ -26,5 +26,5 @@ function make_plot(timespan, y, plot_title)
     ylabel('solution')
     % title(plot_title)
     % plot(timespan, y, 'LineWidth', 1.5) 
-    plot(timespan, y)   
+    plot(timespan, y, 'LineWidth', 2)   
 end

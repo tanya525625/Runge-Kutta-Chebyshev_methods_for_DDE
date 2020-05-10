@@ -1,4 +1,4 @@
-function y = ROCK_for_scalar_DDE(obj, s, koef, is_inter)
+function y = RKC_for_scalar_DDE(obj, s, koef, is_inter)
      K = zeros(obj.timespan_length-1, s+1);
      y = obj.y;
      m = obj.delay / obj.h;
