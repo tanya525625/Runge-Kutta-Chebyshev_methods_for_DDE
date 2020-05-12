@@ -14,10 +14,10 @@ diffEq1 = SolveDDE(span_start, span_end, count, t_retarded,...
                    approx_init, args_count,...
                    delayed_func_, history_func_);
                     
-s = 2;
+s = 3;
 koef = 0;
-lambda = -4;
-is_inter = 1;
+lambda = -500;
+is_inter = 0;
 mu = 0;
 %h = (span_end - span_start) / count
 
