@@ -11,9 +11,9 @@ count = 100;
 span_end = h * count;
 s = 2;
 koef = 0;
-lambda = -2;
+lambda = -3;
 is_inter = 1;
-mu = 2;
+mu = 1;
 
 % создание объекта класса для решения ДУЗА 
 diffEq1 = SolveDDE(span_start, span_end, count, t_retarded,...

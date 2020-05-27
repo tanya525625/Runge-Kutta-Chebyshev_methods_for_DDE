@@ -5,7 +5,7 @@ function y = RKC_for_scalar_DDE(obj, s, koef, is_inter)
      if koef == 0
          w_1 = 1 / (s * s);
      else
-         w_1 = chebyshevT2(s, w_0) / (s * (chebyshevT2(s-1, w_0) - w_0 *chebyshevT2(s, w_0))) * (1 - w_0^2);
+         w_1 = chebyshevT2(s, w_0) / (s * (chebyshevT2(s-1, w_0) -  w_0 *chebyshevT2(s, w_0))) * (1 - w_0^2);
      end 
      
      for n = 1 : obj.timespan_length-1
