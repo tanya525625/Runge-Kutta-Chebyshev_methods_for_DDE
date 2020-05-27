@@ -9,10 +9,10 @@ function y = RKC_for_scalar_DDE(obj, s, koef, is_inter)
      end 
      
      for n = 1 : obj.timespan_length-1
-        K = find_K(obj.y(:, n), s, obj, K, n, m, w_0, w_1, is_inter);
+        K = find_K(y(:, n), s, obj, K, n, m, w_0, w_1, is_inter);
         obj.y(:, n+1) = K(n, s+1);
      end
-    y = obj.y;
+    
 end
 
 
@@ -27,12 +27,12 @@ function res = find_K_in_past(obj, K, t, m, c, i, is_inter)
         end
     else
         %disp('Interpolation');
-        res = interpolate_K(obj,t, c, i);
+        res = interpolate_K(obj, y, t, c, i);
     end
 end
 
 
-function res = interpolate_K(obj,n, c, i)
+function res = interpolate_K(obj, K, n, c, i)
     T = obj.timespan;
     time = T(n) + c(i)*obj.h - obj.delay;
     if time <= obj.timespan(1)
@@ -42,9 +42,9 @@ function res = interpolate_K(obj,n, c, i)
         prev_t_ind = next_t_ind - 1;
         next_t = obj.timespan(next_t_ind);
         prev_t = obj.timespan(prev_t_ind);
-        yn = obj.y(prev_t_ind);
-        ynn = obj.y(next_t_ind);
-        res = interpolation(time, prev_t, next_t, yn, ynn);
+        kn = K(prev_t_ind, i);
+        knn = K(next_t_ind, i);
+        res = interpolation(time, prev_t, next_t, kn, knn);
     end
 end
 
