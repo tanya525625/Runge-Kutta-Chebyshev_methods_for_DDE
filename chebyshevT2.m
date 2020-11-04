@@ -4,7 +4,7 @@ function y = chebyshevT2(n,x)
         y = T1;
     else
         y = x;
-        for i =2:n
+        for i = 2:n
             T0 = T1;
             T1 = y;
             y = 2 * x * T1 - T0;        

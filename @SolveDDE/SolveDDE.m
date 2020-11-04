@@ -39,5 +39,6 @@ classdef SolveDDE
             obj.args_count = args_count;
        end
        y = RKC_for_scalar_DDE(obj, s, koef, is_inter);
+       y = second_RKC_for_scalar_DDE(obj, s, koef, is_inter);
    end
 end
