@@ -40,5 +40,8 @@ classdef SolveDDE
        end
        y = RKC_for_scalar_DDE(obj, s, koef, is_inter);
        y = second_RKC_for_scalar_DDE(obj, s, koef, is_inter);
+       y = RKC_with_inf_eta(obj, s, is_inter);
+       y = ExplEuler(obj);
+       y = ImplEuler(obj);
    end
 end
