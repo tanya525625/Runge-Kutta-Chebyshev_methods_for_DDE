@@ -31,6 +31,7 @@ classdef SolveDDE
             obj.approx_init = approx_init;
             obj.history_func = history_func;
             obj.func = retarded_func;
+            obj.retarded_func = retarded_func;
             obj.timespan = span_start:obj.h:span_end;
             obj.timespan_length = length(obj.timespan);
             obj.y = zeros(args_count, obj.timespan_length);
@@ -39,6 +40,7 @@ classdef SolveDDE
             obj.args_count = args_count;
        end
        y = RKC_for_scalar_DDE(obj, s, koef, is_inter);
+       y = RKC_for_system_DDE(obj, s, koef, is_inter);
        y = second_RKC_for_scalar_DDE(obj, s, koef, is_inter);
        y = RKC_with_inf_eta(obj, s, is_inter);
        y = ExplEuler(obj);
