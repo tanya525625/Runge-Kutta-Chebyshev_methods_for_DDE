@@ -27,4 +27,5 @@ function make_plot(timespan, y, plot_title)
     % title(plot_title)
     % plot(timespan, y, 'LineWidth', 1.5) 
     plot(timespan, y, 'LineWidth', 2)   
+    legend('Жертва','Хищник')
 end
