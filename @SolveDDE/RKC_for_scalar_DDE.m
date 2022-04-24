@@ -55,6 +55,7 @@ function K = find_K(y_n, s, obj, K, t, m, w_0, w_1, is_inter)
     
     c(2) = w_1 / w_0;
     delayed_K_1 = find_K_in_past(obj, K, t, m, c, 1, is_inter);
+    obj.func(K(t, 1), delayed_K_1)
     K(t, 2) = y_n + obj.h * w_1 / w_0 * obj.func(K(t, 1), delayed_K_1);
 
     for i = 3:s+1
