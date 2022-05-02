@@ -85,10 +85,6 @@ function res = b(s, w_0)
     pr1_val = subs(pr1, x, w_0);
     pr2_val = subs(pr2, x, w_0);
     res = double(pr2_val / (pr1_val * pr1_val));
-%     if res == 0
-%         pr1
-%         pr2
-%     end
 end
 
 function res = a(s, w_0)

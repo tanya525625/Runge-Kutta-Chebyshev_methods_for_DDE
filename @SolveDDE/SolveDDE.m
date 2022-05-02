@@ -46,5 +46,6 @@ classdef SolveDDE
        y = ExplEuler(obj);
        y = ImplEuler(obj);
        y = RKC_for_DPDE(obj, s, koef, is_inter, x_0, x_n, x_count);
+       y = RKC2_for_DPDE(obj, s, koef, x_0, x_n, x_count);
    end
 end

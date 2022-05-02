@@ -14,8 +14,8 @@ args_count = 1;
 h = 1;
 count = 100; 
 span_end = h * count; 
-s = 20; 
-koef = 1; 
+s = 2; 
+koef = 0; 
 h_x = (x_n - x_0) / (x_count+1);
 x = x_0:h_x:x_n;
 
@@ -28,6 +28,7 @@ method = 'RKC for delay partial equation: ';
 title = 'Numerical solution';
 
 dy1 = diffEq1.RKC_for_DPDE(s, koef, x_0, x_n, x_count); 
+dy2 = diffEq1.RKC2_for_DPDE(s, koef, x_0, x_n, x_count);
 
-make_plot_on_grid(dy1, x, diffEq1.timespan)
+make_plot_on_grid(dy2, x, diffEq1.timespan);
 
